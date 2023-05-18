@@ -1,0 +1,22 @@
+<div class="container" >
+    <table *ngFor="let part of patients" border="1px" width="40%" cellspacing="10px"  class="table mt-4">
+      <tr >
+        <th>Name</th>
+        <th>Mobile Number</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Department</th>
+        <th>Date & Time</th>
+      </tr>
+      <tr >
+        <td>{{part.firstname}}</td>
+        <td>{{part.mobile}}</td>
+        <td>{{part.email}}</td>
+        <td>{{part.designation}}</td>
+        <td>{{part.radio}}</td>
+        <td>{{part.depart}}</td>
+        <td>{{part.date}}</td>
+      </tr>
+    </table>
+    </div>

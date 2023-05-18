@@ -1,0 +1,47 @@
+<mat-card>
+    <form class="example-form" #patientForm="ngForm" (submit)="onAddForm(patientForm)">
+        <mat-form-field class="example">
+          <input matInput type="text " ngModel required name="firstname" #firstnameInput="ngModel" placeholder="Name" firstname>
+          <mat-error *ngIf="firstnameInput.invalid">please enter Full Name </mat-error>
+        </mat-form-field>
+        <mat-form-field   class="example1">
+            <input matInput type="number"ngModel required name="mobile" #mobileInput="ngModel" placeholder="Mobile Number" mobile >
+            <mat-error *ngIf="mobileInput.invalid">please enter mobile number </mat-error>
+          </mat-form-field>
+          <mat-form-field   class="example2">
+            <input matInput type="email" ngModel required name="email" #emailInput="ngModel" placeholder="Email" email  >
+            <mat-error *ngIf="emailInput.invalid">please enter email </mat-error>
+          </mat-form-field>
+          <mat-form-field class="example3">
+            <input matInput type="text"  placeholder="Age*" ngModel required name ="designation" #designationInput="ngModel" designation  >
+            <mat-error *ngIf="designationInput.invalid">please enter Qualification </mat-error>
+          </mat-form-field>
+          
+    <section class="example4">
+        <label class="example-margin">Gender:</label>
+        <mat-radio-group ngModel="labelPosition" type="select" ngModel required name="radio" #radioInput="ngModel" radio>
+          <mat-radio-button class="example-margin" value="male">Male</mat-radio-button>
+          <mat-radio-button class="example-margin" value="female">Female</mat-radio-button>
+        </mat-radio-group>
+      </section> 
+      <mat-form-field  class="example5">
+        <mat-label>Department</mat-label>
+        <mat-select type="select" ngModel required name="depart" #departInput="ngModel" depart>
+          <mat-option *ngFor="let depart of department" [value]="depart.value">
+            {{depart.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="departInput.invalid">please enter date </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example6">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" type="select" ngModel required name="date" #dateInput="ngModel" date>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="dateInput.invalid">please enter date </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="warn" style=" margin-left: 5%; margin-top: 4%; margin-bottom: 2%;">Register</button>
+      </form>
+           
+</mat-card>

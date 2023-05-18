@@ -1,0 +1,18 @@
+<mat-card>
+    <form class="example-form" #appointForm="ngForm" (submit)="onAddForm(appointForm)">
+        <mat-form-field class="example">
+          <input matInput type="text" placeholder=" Full Name*" ngModel required name="firstname" #firstnameInput="ngModel"  firstname   >
+          <mat-error *ngIf="firstnameInput.invalid">please enter Full Name </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example1" >
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" type="select" ngModel required name="date" #dateInput="ngModel" date>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="dateInput.invalid">please select date </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="warn" style=" margin-left: 5%; margin-top: 4%; margin-bottom: 2%;">Book Now</button>
+      </form>
+           
+</mat-card>

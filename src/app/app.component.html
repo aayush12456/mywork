@@ -1,0 +1,38 @@
+<mat-toolbar  style="background-color: #d1b3ff;">
+    <mat-toolbar-row>
+        <h1 style="padding-top: 1%; color: white;">LOGO</h1>
+        <div class="boxContainer">
+          <table class="elementsContainer">
+            <tr>
+               <td>
+                <input type="text" placeholder="Search Patients" class="search">
+               </td> 
+               <td>
+                <a href="#"><i class="material-icons">search</i></a>
+               </td>
+            </tr>
+          </table>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="openDialog()">Make an Appointment</button>
+        <button type="button" id="btn" class="btn btn-primary" (click)="openDialog1()">Add Patient</button>
+        <button class="btn btn-primary" id="btn1"><img src="https://img.icons8.com/?size=512&id=32058&format=png" class="img"> </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side" style="background-color:#4700b3; color: white;" >
+        <mat-nav-list >
+        <a mat-list-item ><p style="color: white;">Dashboard</p></a>
+        <a mat-list-item routerLink="/patient"><p style="color: white;">Patient</p></a>
+        <a mat-list-item routerLink="/appoint"><p style="color: white;">Appointment</p></a>
+        <a mat-list-item routerLink="/billing"><p style="color: white;">Billing</p></a>
+        <p style="padding-left: 10%; ">------------------------</p>
+        <a mat-list-item  style="position: absolute; top: 83%;"><p style="color: white;">Support</p></a>
+        <a mat-list-item style="position: absolute; top: 90%;" ><p style="color: white;">Setting</p></a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 88vh;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

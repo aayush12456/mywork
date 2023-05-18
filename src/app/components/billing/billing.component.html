@@ -1,0 +1,48 @@
+<h1 style="text-align: center;" class="mt-4">Billing Overview</h1>
+<div class="card" style="width: 18rem;" id="card" *ngFor="let part of patients">
+  <div class="card-body">
+    <p class="card-text">{{part.firstname}}</p>
+    <p class="card-text">{{part.designation}} ,  {{part.radio}}</p>
+  </div>
+</div>
+<div class="card" style="width: 48rem; margin-left: 25%;" *ngIf="patients.length>0" >
+  
+    <div class="card-body">
+      <h5 class="card-title" style="font-size: 20px;">Billing Details</h5>
+      <button type="button" class="btn btn-primary" style="border-radius: 15px; margin-left: 75%;margin-top:-7%; ">print</button>
+        <table *ngFor="let part of patients" border="1px" width="80%" cellspacing="10px"  class="table mt-4">
+          <tr >
+            <th> Patient Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Date & Time</th>
+          </tr>
+          <tr >
+            <td>{{part.firstname}}</td>
+            <td>{{part.designation}}</td>
+            <td>{{part.radio}}</td>
+            <td>{{part.date}}</td>
+          </tr>
+        </table>
+       <table *ngFor="let part of patients" border="1px" width="80%" cellspacing="10px"  class="table mt-4">
+          <tr >
+            <th>Service</th>
+            <th>price</th>
+          </tr>
+          <tr >
+            <td>{{part.depart}}</td>
+             <td>{{part.depart==='physician'?500:300 || part.depart==='Heart Specialist'?1000:300}}</td>
+          </tr>
+        </table>
+        <table *ngFor="let part of patients" border="1px" width="80%" cellspacing="10px"  class="table mt-4">
+            <tr >
+              <th>Mobile Number</th>
+              <th>Total</th>
+            </tr>
+            <tr >
+              <td>{{part.mobile}}</td>
+              <td>{{part.depart==='physician'?500:300 || part.depart==='Heart Specialist'?1000:300}}</td>
+            </tr>
+          </table>
+        </div>
+    </div>
